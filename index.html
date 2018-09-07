@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=”ja”>
+<meta http-equiv="content-type" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+    <meta charset=”utf-8″>
+    <title>javascriptの練習</title>
+</head>
+<body>
+<!--外部ファイルの読み込み-->
+<script src="javascript/script.js"></script>
+    <script>
+        // 初歩
+        // console.log("hello world!");
+
+        // 変数
+        // var msg;
+        // msg = "hello world!";
+        // console.log(msg);
+
+        // 数値
+        // var x;
+        // x = 10 + 3;
+        // console.log(x);
+
+        // 改行
+        // var s;
+        // s = "hello";
+        // s = "hel\'llo";
+        // s = 'it\'s\n a pe\tn.';
+        //
+        // s = "hello" + "world";
+        // s = "5" + 5; "55"
+        //
+        // console.log(s);
+
+        // 条件分岐
+        // var score = 30;
+        // if (score > 60 ) {
+        //     console.log("ok!");
+        // } else if (score > 40) {
+        //     console.log("soso!");
+        // } else {
+        //     console.log("no!")
+        // }
+
+        // 真偽値
+        // 演算子
+        // if (x) {
+        //     //xが文字列じゃなかったら
+        // }
+        // if (x !== ''){
+        //     //xが文字列じゃなかったら（上と同じ）
+        // }
+
+        // 三項演算子
+        // var max, x,y;
+        // max = (x > y) ? x : y;
+
+        // switch文
+        // var signal = "blue";
+        //
+        // switch (signal){
+        //     case "red":
+        //         console.log("stop!");
+        //         break;
+        //     case "green":
+        //     case "blue":
+        //         console.log("go!");
+        //         break;
+        //     case "yellow":
+        //         console.log("slow down!");
+        //         break;
+        //     default:
+        //         console.log("wrong signal!");
+        //         break;
+        // }
+
+        // ループ処理
+        // var i = 0;
+        // while (i < 10){
+        //     console.log(i);
+        //     i++;
+        // }
+        // 条件判定が先に行われるか後に行われるか
+        // var i = 0;
+        // do {
+        //     console.log(i);
+        //     i++;
+        // } while (i < 10);
+
+        // for文
+        // for (var i = 0; i < 10; i++ ){
+        //     if (i === 5) {
+        //         // break;  // 抜ける処理
+        //         // continue;  // それだけ処理しない処理
+        //     }
+        //     console.log(i);
+        // }
+
+        // アラート機能
+        // alert("hello!");
+
+        // 疑問形でアラート
+        // var answer = confirm("are you sure?");
+        // console.log("answer");
+
+        // 名前を聞くアラート
+        // var name = prompt("お名前は？","名無しさん");
+        // console.log(name);
+
+        // 関数を使用する
+        // function hello() {
+        //     console.log("hello");
+        // }
+        // hello();
+
+        // 引数を利用した関数
+        // function hello(name) {
+        //     console.log("hello" + name);
+        // }
+        // hello("Tom");
+        // hello("Bob");
+
+        // 返り値がほしいとき
+        // function hello(name) {
+        //     return "hello" + name;
+        // }
+        // var greet = hello("Tom");   // hello関数を代入しているだけ。hello関数のnameにTomを代入
+        // console.log(greet);
+
+        // ローカル関数を使おう
+        // function hello(name) {
+        //     var msg = "hello" + name;  // ローカル変数という。その関数内でしか利用できない
+        //     return msg;
+        // }
+        // var greet = hello("Tom");
+        // console.log(greet);
+        // // console.log(msg);  //これはエラーになる。msgはローカル変数だから
+
+        // 無名関数、匿名関数
+        // var hello = function(name) {       // 無名関数、匿名関数という。関数は変数にもなれるのでこういう方法もできる
+        //     var msg = "hello" + name;
+        //     return msg;
+        // }
+        // var greet = hello("Tom");
+        // console.log(greet);
+
+        // 即時関数
+        // (function hello() {     // ()を全体にして、最後にもう一回()を追加するだけ
+        //     console.log("hello")
+        // })();
+
+        // 即時関数の引数
+        // (function (name) {          //  即時に出力されるのでhello関数の省略も可能です
+        //     console.log("hello" + name);
+        // })("Tom");
+
+        // 即時関数のローカル変数化
+        // 関数内で定義された変数は外からアクセスできないので、他人のプログラムを読みながらのコードを書くときに便利
+        // (function () {
+        //     var x = 10,
+        //         y = 20;
+        //     console.log(x + y);
+        // })();
+
+        // タイマー処理
+        // setInterval 前の事柄を無視してしまうので処理が重くなる
+        // var i = 0;
+        // function show() {
+        //     console.log(i++);
+        // }
+        // setInterval(function() {
+        //     show();
+        // }, 1000);        //1秒後に処理をし続ける
+
+        // setTimeout　一度処理が完了してから実行をするので使い勝手が良い
+        // var i = 0;
+        // function show() {
+        //     console.log(i++);
+        // }
+        // setTimeout(function() {
+        //     show();
+        // }, 1000);        //1秒後に処理を行う
+
+        // setTimeoutをsetIntervalのように扱うには → console.log(i++)でループを行なっているので、その中にsetTimeoutを入れてあげれば良い
+        // var i = 0;
+        // function show() {
+        //     console.log(i++);
+        //     setTimeout(function() {
+        //         show();
+        //     }, 1000);
+        // }
+        // show();
+
+        // タイマー処理を変数に代入し、タイマーを止める処理を行う
+        // var i = 0;
+        // function show() {
+        //     console.log(i++);
+        //     var tid = setTimeout(function() {
+        //         show();
+        //     }, 1000);
+        //     if (i > 3) {
+        //         clearTimeout(tid);
+        //     }
+        // }
+        // show();
+
+        // 配列
+        // var score = [100, 300, 500, "takeuchi"];
+        // console.log(score[0]);
+        // score[2] = 400;
+        // console.log(score);
+
+        // var m = [
+        //     [1, 2, 3],
+        //     [4, 5, 6]
+        // ];
+        // console.log(m[1][1]);
+
+        // オブジェクトを使う
+        // var user = {
+        //     email: "takeuchi@gamil.com",  // プロパティという
+        //     score: 80
+        // };
+        // console.log(user["email"]);
+        // console.log(user.email);
+        // user.score = 100;
+        // console.log(user);
+
+        // メソッドを使いましょう
+        // var user = {
+        //     email: "takeuchi@gamil.com",
+        //     score: 80,
+        //     greet: function(name){
+        //         console.log("hello," + name + " from " + this.email);    // プロパティの値に関数がきた場合、その関数のことをメソッドという
+        //     }                                                            // thisはこのプロパティ内での変数を指す
+        // };
+        // // console.log(user["email"]);
+        // // console.log(user.email);
+        // // user.score = 100;
+        // // console.log(user);
+        // user.greet("Tom");
+
+        //
+
+
+    </script>
+</body>
+</html>
