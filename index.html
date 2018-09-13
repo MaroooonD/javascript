@@ -234,7 +234,7 @@
         //     score: 80,
         //     greet: function(name){
         //         console.log("hello," + name + " from " + this.email);    // プロパティの値に関数がきた場合、その関数のことをメソッドという
-        //     }                                                            // thisはこのプロパティ内での変数を指す
+        //     }                                                            // thisはこのプロパティ内での変数(user)を指す
         // };
         // // console.log(user["email"]);
         // // console.log(user.email);
@@ -242,9 +242,96 @@
         // // console.log(user);
         // user.greet("Tom");
 
+        // stringオブジェクト（組み込みオブジェクト）を使用する
+        // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String
+        // var s = new String("takeuchi");
+        // // var s = "takeuchi"; //一緒の値が出る、文字列リテラル
+        // console.log(s.length);
+        // console.log(s.replace("t","T"));
+        // console.log(s.substr(1,3));
+
+        // arrayオブジェクトを使用していく（他にもメソッドやプロパティが存在するのでMDNをのぞいてみよう
+        // var a = new Array(100, 300, 200);
+        // // var a = [100, 300, 200];
+        // console.log(a.length);
+        // // unshift -> array <- push
+        // // shift   <- array -> pop
+        // a.push(500);       //末尾に500を追加
+        // console.log(a);
+        // a.splice(1, 2, 800, 1000);    //a[1]から2つを除去して、そこに800と1000を代入
+        // console.log(a);
+
+        // Math、Dateオブジェクトを使用しよう
+        // console.log(Math.Pi);
+        // console.log(Math.ceil(5.3));    //小数点切り下げ
+        // console.log(Math.floor(5.3));   //小数点切り上げ
+        // console.log(Math.round(5.3));   //小数点アゲアゲ
+        // console.log(Math.random());
         //
+        // var d = new Date();
+        // var d = new Date(2014, 1, 11. 10, 20, 30);  //2014年2月11日10時20分30秒
+        // console.log(d.getFullYear());
+        // console.log(d.getMonth());
+        // console.log(d.getTime());
 
-
+        // DOMとはなにか
+        // console.dir(window);    //windowの情報が見れる
+        // console.log(window.outerHeight);    //windowの高さ
+        // window.location.href = 'http://dotinstall.com';
+        //
+        // window.document - 今開いているページ
+        //
+        // document object model (DOM)
     </script>
+
+
+        <!--DOMを操作してみよう-->
+        <!--
+            <h1>見出し</h1>
+            <p id="msg">こんにちは！</p>
+            <style type="text/css">
+                .myStyle {
+                    font-weight: bold;
+                    border: 1px solid gray;
+                }
+            </style>
+            <script>
+                var e = document.getElementById('msg');
+                e.textContent = 'Hello!';
+                e.style.color = 'red';
+                e.className = 'myStyle';
+
+                var greet = document.createElement('p'),
+                    text = document.createTextNode('hello world');
+                document.body.appendChild(greet).appendChild(text);
+            </script>
+        -->
+
+        <!-- クリックなどのイベントを設定してみよう -->
+        <!--
+        <h1>見出し</h1>
+        <p id="msg">こんにちは！</p>
+        <button id="add">Click!</button>
+        <style type="text/css">
+            .myStyle {
+                font-weight: bold;
+                border: 1px solid gray;
+            }
+        </style>
+        <script>
+            var e = document.getElementById('msg');
+            e.textContent = 'Hello!';
+            e.style.color = 'red';
+            e.className = 'myStyle';
+
+
+            document.getElementById('add').addEventListener('click',function(){
+                var greet = document.createElement('p'),
+                    text = document.createTextNode('hello world');
+                document.body.appendChild(greet).appendChild(text);
+            });
+        </script>
+        -->
+
 </body>
 </html>
