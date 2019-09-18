@@ -1,0 +1,76 @@
+.container {
+    width: 300px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin-bottom: 8px;
+}
+
+main img {
+    width: 300px;
+    height: 200px;
+    vertical-align: bottom;
+}
+
+nav {
+    margin-bottom: 8px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    width: 60px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+nav li:hover {
+    background: #f8f8f8;
+}
+
+#play, #pause {
+    width: 140px;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(5, 56px);
+    gap: 5px;
+}
+
+.thumbnails li {
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.thumbnails li:hover {
+    opacity: 1;
+}
+
+.thumbnails li.current {
+    opacity: 1;
+}
+
+.thumbnails img {
+    width: 56px;
+    vertical-align: bottom;
+}
+
+.hidden {
+    display: none;
+}

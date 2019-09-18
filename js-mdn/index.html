@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<div class="study">
+    <button>ここをクリックして</button>
+</div>
+<script>
+    function createParagraph() {
+        const para = document.createElement('p');
+        para.textContent = 'ボタンが押されました！';
+        document.body.appendChild(para);
+    }
+
+    const buttons = document.querySelectorAll('button');
+
+    for (var i = 0; i < buttons.length ; i++) {
+        buttons[i].addEventListener('click', createParagraph);
+    }
+
+</script>
+</body>
+</html>

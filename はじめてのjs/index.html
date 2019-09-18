@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>はじめてのjavascript</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .box {
+        width: 100px;
+        height: 100px;
+        background: skyblue;
+        cursor: pointer;
+        transition: 0.8s;
+        margin: 0 8px 8px 0;
+        text-align: center;
+        line-height: 100px;
+    }
+    .win {
+        background: pink;
+        border-radius: 50%;
+        transform: rotate(360deg);
+    }
+    .lose {
+        transform: scale(0.9);
+    }
+</style>
+<body>
+<!--<div id="target1" class="box"></div>-->
+<!--<div id="target2" class="box"></div>-->
+<!--<div id="target3" class="box"></div>-->
+
+</div>
+<script>
+    'use strict';
+    //
+    // const changeColor1 = document.getElementById('target1');
+    // const changeColor2 = document.getElementById('target2');
+    // const changeColor3 = document.getElementById('target3');
+    //
+    // // changeColor1.addEventListener('click', function() {
+    // //     // document.getElementById('target').style.background = 'pink';
+    // //     // document.getElementById('target').style.borderRadius = '50%';
+    // //     changeColor1.classList.toggle('circle');
+    // // });
+    //
+    // changeColor1.addEventListener('click', function() {
+    //     changeColor1.classList.toggle('circle');
+    // });
+    // changeColor2.addEventListener('click', function() {
+    //     changeColor2.classList.toggle('circle');
+    // });
+    // changeColor3.addEventListener('click', function() {
+    //     changeColor3.classList.toggle('circle');
+    // });
+
+
+    // const div = document.createElement('div');
+    // div.classList.add('box');
+    // div.addEventListener('click', function () {
+    //     div.classList.toggle('circle');
+    // });
+
+    // bodyの子要素として上記のdivを生成してあげる
+
+     // document.body.appendChild(div);
+
+
+    // for (let i = 0; i < 100; i++) {
+    //     const div = document.createElement('div');
+    //     div.classList.add('box');
+    //     div.textContent = i;
+    //     div.addEventListener('click', function () {
+    //         div.classList.toggle('circle');
+    //     });
+    //
+    //     document.body.appendChild(div);
+    // }
+
+    const num = 5;
+    const winner = Math.floor(Math.random() * num);
+
+    for (let i = 0; i < num; i++) {
+        const div = document.createElement('div');
+        div.classList.add('box');
+        if (i === winner) {
+            div.dataset.result = 'win';
+        } else {
+            div.dataset.result = 'lose';
+        }
+        div.addEventListener('click', function () {
+            if (div.dataset.result === 'win') {
+              div.textContent = 'Win!';
+              div.classList.add('win');
+            } else {
+                div.textContent = 'Lose!';
+                div.classList.add('lose');
+            }
+            div.classList.toggle('circle');
+        });
+
+        document.body.appendChild(div);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+</style>
+
+<div>
+
+</div>
+
+<script>
+
+    let call = () => {
+        let x = 1;
+
+        let closure = () => {
+            alert(x);
+            x = x + 1;
+        };
+
+        return closure;
+    };
+
+    let f = call();
+
+
+    f();
+    f();
+    f();
+
+</script>
+</body>
+</html>

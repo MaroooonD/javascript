@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>firebase auth テスト</title>
+</head>
+<body>
+<h1>テスト用認証アプリ</h1>
+
+<!-- メールアドレス入力フォーム -->
+<div>
+    <label for="email">Email</label>
+    <input type="email" id="email"/>
+</div>
+
+<!-- パスワード入力フォーム -->
+<div>
+    <label for="password">Password</label>
+    <input type="password" id="password"/>
+</div>
+
+<!-- ボタン -->
+<button id="sign-up" onclick="onSignUpButtonClicked();">sign up</button>
+<button id="sign-in" onclick="onSignInButtonClicked();">sign in</button>
+<button id="sign-out" onclick="onSignOutButtonClicked();">sign out</button>
+
+<!-- ユーザー情報の出力用エリア -->
+<h2>ユーザー情報</h2>
+<div id="userinfo">
+</div>
+
+<!-- ログ出力エリア -->
+<h2>ログ</h2>
+<p id="log"></p>
+
+<!-- ↓↓ ここにコピーしたスクリプトを貼り付ける ↓↓ -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.2/firebase-app.js"></script>
+<!-- include only the Firebase features as you need -->
+<script defer src="/__/firebase/6.3.2/firebase-auth.js"></script>
+<script defer src="/__/firebase/6.3.2/firebase-database.js"></script>
+<script defer src="/__/firebase/6.3.2/firebase-messaging.js"></script>
+<script defer src="/__/firebase/6.3.2/firebase-storage.js"></script>
+<!-- initialize the SDK after all desired features are loaded -->
+<script defer src="/__/firebase/init.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCzcQKQg4WvOxNWcQXIMgOuw8pTIl-fyR0",
+        authDomain: "login-practice-ce066.firebaseapp.com",
+        databaseURL: "https://login-practice-ce066.firebaseio.com",
+        projectId: "login-practice-ce066",
+        storageBucket: "",
+        messagingSenderId: "569175479783",
+        appId: "1:569175479783:web:709bbc1767fb0e34"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<!-- ↑↑ ここにコピーしたスクリプトを貼り付ける ↑↑ -->
+<script src="main.js"></script>
+</body>
+</html>
