@@ -1,0 +1,12 @@
+.form-wrapper {
+    width: 80%;
+    padding: 30px;
+    margin: 30px auto;
+    border: 2px solid #e6e6e6;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+}

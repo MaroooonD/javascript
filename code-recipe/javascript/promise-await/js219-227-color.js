@@ -60,4 +60,12 @@ async function PromiseRoundupColor() {
             resolve();
         }, 1000);
     });
+
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            rainbow.push('#0a0ab0');
+            roundup.style.backgroundColor = `${rainbow[7]}`;
+            resolve();
+        }, 1000);
+    });
 }

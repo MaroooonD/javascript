@@ -15,18 +15,3 @@ button:hover {
     border-color: #0a0ab0;
     color: #0a0ab0;
 }
-
-h1 {
-    text-align: center
-}
-
-h1 a {
-    text-decoration: none;
-    transition: .2s
-}
-
-h1 a:hover {
-    color: orange;
-}
-
-
